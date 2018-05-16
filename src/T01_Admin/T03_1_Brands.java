@@ -15,13 +15,14 @@ import BasicAction.Actions;
 import Components.Run_API;
 import driverpkg.CreateDriver;
 import element.LeftSideTtreeMenu;
+import element.E05_Brands;
 import element.E15_LobbyTemplate;
 
 @SuppressWarnings("unused")
 public class T03_1_Brands {
   private static WebDriver              driver;
   private static Actions                actions;
-  private static E15_LobbyTemplate      LobbyTemplatepage;
+  private static E05_Brands             BrandsPage;
   private static LeftSideTtreeMenu      TreeMenu;
 
   @AfterClass
@@ -44,58 +45,27 @@ public class T03_1_Brands {
       String  comment     = "";
       String  record      = Run_API.PASSED;
       String  runID       = env.getProperty("runID");
-      String  caseid      = "96234";
+      String  caseid      = "111950";
       String  Passcomment = "";
 
       try {
-          Thread.sleep(4000);
-
-          WebElement Sortbutton =
-              driver.findElement(
-                  By.xpath(
-                      "//*[@id=\"main-container\"]/div[2]/div/div[2]/div/div/ui-view/div/div[2]/table/thead/tr[1]/th[1]/div"));
-
-          actions.clickElement(Sortbutton);
-          Thread.sleep(4000);
-
-          boolean z2a = actions.verifySortingZ_To_A("div.table-responsive > table > tbody > tr> td:nth-child(1)",
-                                                    "Lobby Template Name");
-          WebElement sortbutton02 =
-              driver.findElement(
-                  By.xpath(
-                      "//*[@id=\"main-container\"]/div[2]/div/div[2]/div/div/ui-view/div/div[2]/table/thead/tr[1]/th[1]/div/span"));
-
-          actions.clickElement(sortbutton02);
-          Thread.sleep(4000);
-
-          boolean a2z = actions.verifySortingA_To_Z("div.table-responsive > table > tbody > tr> td:nth-child(1)",
-                                                    "Lobby Template Name");
-
-          if (z2a == false) {
-              comment = comment + "Sort Z to A is wrong, ";
-          } else {
-              Passcomment = Passcomment + "[-] Pass Sorting Z-A works correctly :Lobby Template Name ";
-          }
-
-          if (a2z == false) {
-              comment = comment + "Sort A to Z is wrong, ";
-          } else {
-              Passcomment = Passcomment + "[-] Pass Sorting A-Z works correctly :Lobby Template Name ";
-          }
+        result = actions.VerifyTableHeader(BrandsPage.lic_ORGBransHeaderList);
+          if (result){Passcomment = Passcomment + "[-] Pass All table header displayed correctly, ";}
+          else{comment = comment + "[X] Fail Table header displayed incorrectly, ";}
       } catch (Exception e) {
-          comment = comment + "Error when try to verify sorting function of Lobby Template page";
+          comment = comment + "[X] Error when try to verify header, ";
       }
-
-
-
-
-
-      if (comment.length() != 0) {
-          record = Run_API.FAILED;
-          Run_API.setCaseResult(runID, caseid, record, comment);
-      } else {
-          Run_API.setCaseResult(runID, caseid, record, Passcomment);
-      }
+      try {
+        String [] labellist = {BrandsPage.Brands_Page_Header_text(),BrandsPage.AddBrand_Button_text(),BrandsPage.BrandCode_text(),BrandsPage.BrandName_text(),BrandsPage.SearchBTN().getText()};
+        result = actions.VerifyLables(labellist, BrandsPage.lic_ORGBransLabelList);
+          if (result){Passcomment = Passcomment + "[-] Pass All label  displayed correctly, ";}
+          else {comment = comment + "[X] Fail Label displayed incorrectly, ";}}
+      catch (Exception e) {
+            comment = comment + "[X] Error when try to verify Label, ";
+        }  
+      
+      
+        actions.UpdateTestrail(runID, caseid, record, comment, Passcomment);
   }
 
   @BeforeClass
@@ -115,7 +85,7 @@ public class T03_1_Brands {
 
       driver            = new CreateDriver().getDriver();
       actions           = new Actions(driver);
-      LobbyTemplatepage = new E15_LobbyTemplate(driver);
+      BrandsPage        = new E05_Brands(driver);
       TreeMenu          = new LeftSideTtreeMenu(driver);
       driver.get(LicenseePortalURL);
       Thread.sleep(3000);
