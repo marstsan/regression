@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="resource"/>
+	<classpathentry kind="lib" path="/Users/mars/Documents/JAVA_PROJECT_LIBs/regressionlib/byte-buddy-1.7.9.jar"/>
+	<classpathentry kind="lib" path="/Users/mars/Documents/JAVA_PROJECT_LIBs/regressionlib/client-combined-3.11.0-sources.jar"/>
+	<classpathentry kind="lib" path="/Users/mars/Documents/JAVA_PROJECT_LIBs/regressionlib/client-combined-3.11.0.jar"/>
+	<classpathentry kind="lib" path="/Users/mars/Documents/JAVA_PROJECT_LIBs/regressionlib/commons-codec-1.10.jar"/>
+	<classpathentry kind="lib" path="/Users/mars/Documents/JAVA_PROJECT_LIBs/regressionlib/commons-exec-1.3.jar"/>
+	<classpathentry kind="lib" path="/Users/mars/Documents/JAVA_PROJECT_LIBs/regressionlib/commons-logging-1.2.jar"/>
+	<classpathentry kind="lib" path="/Users/mars/Documents/JAVA_PROJECT_LIBs/regressionlib/gson-2.8.2.jar"/>
+	<classpathentry kind="lib" path="/Users/mars/Documents/JAVA_PROJECT_LIBs/regressionlib/guava-23.6-jre.jar"/>
+	<classpathentry kind="lib" path="/Users/mars/Documents/JAVA_PROJECT_LIBs/regressionlib/httpasyncclient-4.1.1.jar"/>
+	<classpathentry kind="lib" path="/Users/mars/Documents/JAVA_PROJECT_LIBs/regressionlib/httpclient-4.5.3.jar"/>
+	<classpathentry kind="lib" path="/Users/mars/Documents/JAVA_PROJECT_LIBs/regressionlib/httpcore-4.4.6.jar"/>
+	<classpathentry kind="lib" path="/Users/mars/Documents/JAVA_PROJECT_LIBs/regressionlib/httpmime-4.5.2.jar"/>
+	<classpathentry kind="lib" path="/Users/mars/Documents/JAVA_PROJECT_LIBs/regressionlib/json-20160212.jar"/>
+	<classpathentry kind="lib" path="/Users/mars/Documents/JAVA_PROJECT_LIBs/regressionlib/okhttp-3.9.1.jar"/>
+	<classpathentry kind="lib" path="/Users/mars/Documents/JAVA_PROJECT_LIBs/regressionlib/okio-1.13.0.jar"/>
+	<classpathentry kind="lib" path="/Users/mars/Documents/JAVA_PROJECT_LIBs/regressionlib/org.apache.commons.io.jar"/>
+	<classpathentry kind="lib" path="/Users/mars/Documents/JAVA_PROJECT_LIBs/regressionlib/testrail.jar"/>
+	<classpathentry kind="lib" path="/Users/mars/Documents/JAVA_PROJECT_LIBs/regressionlib/unirest-java-1.4.9.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
+	<classpathentry kind="lib" path="/Users/mars/Documents/JAVA_PROJECT_LIBs/regressionlib/httpcore-nio-4.4.4.jar"/>
+	<classpathentry kind="lib" path="/Users/mars/Documents/JAVA_PROJECT_LIBs/regressionlib/tokenapi/UGSToken.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
